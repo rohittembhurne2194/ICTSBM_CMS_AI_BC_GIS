@@ -332,6 +332,7 @@
     <Compile Include="Controllers\AndroidController.cs" />
     <Compile Include="Controllers\AttendenceBeatMapController.cs" />
     <Compile Include="Controllers\AttendenceController.cs" />
+    <Compile Include="Controllers\BCController.cs" />
     <Compile Include="Controllers\ComplaintController.cs" />
     <Compile Include="Controllers\DatableController.cs" />
     <Compile Include="Controllers\DumpPlantProcessController.cs" />
@@ -3056,7 +3057,6 @@
     <Content Include="Views\DumpYard\Index.cshtml" />
     <Content Include="Views\DumpYard\AddDumpYardDetails.cshtml" />
     <Content Include="Views\DumpYard\SaveBundel.cshtml" />
-    <Content Include="Views\GarbageCollection\MenuDumpYardIndex.cshtml" />
     <Content Include="Views\GarbageCollection\DumpYardIndex.cshtml" />
     <Content Include="Views\Employee\MenuEmployeeSummaryIndex.cshtml" />
     <Content Include="Views\Report\SingleEmployeeCollection.cshtml" />
@@ -3249,11 +3249,12 @@
     <Content Include="Views\MasterQR\QRBunchIndex.cshtml" />
     <Content Include="Views\MasterQR\AddMasterQRBunchDetails.cshtml" />
     <Content Include="Views\GarbageCollection\MenuBCDumpYardIndex.cshtml" />
-    <Content Include="Views\GarbageCollection\BCDumpYardIndex.cshtml" />
     <Content Include="Views\GIS\GisMap.cshtml" />
     <Content Include="Views\AIReports\DumpYardForecastReport.cshtml" />
     <Content Include="Views\AIReports\DumpYardForecastBarReport.cshtml" />
     <Content Include="Views\AIReports\HouseCountForecastReport.cshtml" />
+    <Content Include="Views\BC\BCDumpYardIndex.cshtml" />
+    <Content Include="Views\BC\MenuBCDumpYardIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
