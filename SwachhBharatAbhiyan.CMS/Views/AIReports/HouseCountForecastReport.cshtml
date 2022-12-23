@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "HouseCountForecastReport";
+}
+
+
+<center><h3>House Scan Forecast Report</h3></center>
+
+
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+<style>
+    .plotlyjsicon {
+        display: none !important;
+    }
+</style>
+
+
+<div id="plotly_div">
+    @if (File.Exists(Server.MapPath("~/Images/AI/" + @ViewBag.AIReportFolder + "/HouseScanforecast.html")))
+    {
+        @Html.Raw(File.ReadAllText(Server.MapPath("~/Images/AI/" + @ViewBag.AIReportFolder + "/HouseScanforecast.html")))
+    }
+    else
+    {
+        <center><h1>Data Not available</h1></center>
+    }
+</div>
+
+
+

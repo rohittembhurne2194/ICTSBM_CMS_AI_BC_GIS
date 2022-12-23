@@ -328,6 +328,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountMasterController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AIReportsController.cs" />
     <Compile Include="Controllers\AndroidController.cs" />
     <Compile Include="Controllers\AttendenceBeatMapController.cs" />
     <Compile Include="Controllers\AttendenceController.cs" />
@@ -3250,6 +3251,9 @@
     <Content Include="Views\GarbageCollection\MenuBCDumpYardIndex.cshtml" />
     <Content Include="Views\GarbageCollection\BCDumpYardIndex.cshtml" />
     <Content Include="Views\GIS\GisMap.cshtml" />
+    <Content Include="Views\AIReports\DumpYardForecastReport.cshtml" />
+    <Content Include="Views\AIReports\DumpYardForecastBarReport.cshtml" />
+    <Content Include="Views\AIReports\HouseCountForecastReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
