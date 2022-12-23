@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net451</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SwachBharat.CMS.Bll.Repository\SwachBharat.CMS.Bll.Repository.csproj" />
+    <ProjectReference Include="..\SwachBharat.CMS.Bll.Sevices\SwachBharat.CMS.Bll.Services.csproj" />
+    <ProjectReference Include="..\SwachBharat.CMS.Bll.ViewModels\SwachBharat.CMS.Bll.ViewModels.csproj" />
+    <ProjectReference Include="..\SwachBharat.CMS.Dal.DataContexts\SwachBharat.CMS.Dal.DataContexts.csproj" />
+    <ProjectReference Include="..\SwachhBharatAbhiyan.CMS\SwachhBharatAbhiyan.CMS.csproj" />
+  </ItemGroup>
+
+</Project>
