@@ -2502,8 +2502,6 @@
     <Content Include="Images\052120180915_1a70.jpg" />
     <Content Include="Images\add_image_square.png" />
     <Content Include="Images\AI\ITDepartment\DumpYardforecast.html" />
-    <Content Include="Images\AI\ITDepartment\DumpYardforecastbar.html" />
-    <Content Include="Images\AI\ITDepartment\HouseScanforecast.html" />
     <Content Include="Images\default.png" />
     <Content Include="Images\default1.png" />
     <Content Include="Images\default2.png" />
