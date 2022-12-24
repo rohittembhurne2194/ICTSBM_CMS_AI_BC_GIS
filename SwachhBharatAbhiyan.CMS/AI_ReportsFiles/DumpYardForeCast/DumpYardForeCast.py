@@ -1,4 +1,4 @@
-# Run python forecast_deply_1.py --server 202.65.157.253 --database LIVEAdvanceAheriGhantaGadi --ulbname AheriNagarPanchayat --hostname localhost --filename DumpYardForecast --ReportTitle "Aheri Nagar Panchayat"
+# Run python DumpYardForeCast.py -ip 124.153.94.110 -db LIVEAdvanceAppynittyGhantaGadi -ulbname ITDepartment -hostname localhost -filename DumpYardForecast -ReportTitle "IT Department"
 
 import pymssql
 import pandas as pd
@@ -31,7 +31,8 @@ reporttitle = args["ReportTitle"]
 if hostname == "localhost":
 
     # Parent Directory path
-    parent_dir = "D:/Rohit/ICTSBMCMS(AI_GIS_BC)/ICTSBMCMS/SwachhBharatAbhiyan.CMS/Images/AI"
+    
+	parent_dir = "D:/ICTSBMCMS-AI-BC-GIS/ICTSBMCMS/SwachhBharatAbhiyan.CMS/Images/AI"
 
 else:
 
