@@ -30,9 +30,9 @@ reporttitle = args["ReportTitle"]
 if hostname == "localhost":
 
     # Parent Directory path
-    # parent_dir = "D:/Rohit/ICTSBMCMS(AI_GIS_BC)/ICTSBMCMS/SwachhBharatAbhiyan.CMS/Images/AI"
+    parent_dir = "D:/Rohit/ICTSBMCMS(AI_GIS_BC)/ICTSBMCMS/SwachhBharatAbhiyan.CMS/Images/AI"
 
-    parent_dir = "D:/ICTSBMCMS-AI-BC-GIS/ICTSBMCMS/SwachhBharatAbhiyan.CMS/Images/AI"
+    # parent_dir = "D:/ICTSBMCMS-AI-BC-GIS/ICTSBMCMS/SwachhBharatAbhiyan.CMS/Images/AI"
 else:
 
     # Parent Directory path
