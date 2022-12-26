@@ -34,8 +34,10 @@
         }
     });
 
+    debugger;
 
     $("#demoGrid").DataTable({
+       
         "sDom": "ltipr",
        "order": [[10, "desc"]],
         "processing": true, // for show progress bar
