@@ -146,12 +146,6 @@
     <Compile Include="Daily_Attendance.cs">
       <DependentUpon>ChildSwachBharatAbhiyan.tt</DependentUpon>
     </Compile>
-    <Compile Include="DumpTripDetail.cs">
-      <DependentUpon>ChildSwachBharatAbhiyan.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DumpTripDetailM.cs">
-      <DependentUpon>ChildSwachBharatAbhiyan.tt</DependentUpon>
-    </Compile>
     <Compile Include="DumpYardDetail.cs">
       <DependentUpon>ChildSwachBharatAbhiyan.tt</DependentUpon>
     </Compile>

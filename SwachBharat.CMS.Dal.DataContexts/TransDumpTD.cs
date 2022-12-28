@@ -30,10 +30,11 @@ namespace SwachBharat.CMS.Dal.DataContexts
         public Nullable<bool> TStatus { get; set; }
         public Nullable<long> bcStartDateTime { get; set; }
         public Nullable<long> bcEndDateTime { get; set; }
-        public Nullable<decimal> bcTotalGcWeight { get; set; }
-        public Nullable<decimal> bcTotalDryWeight { get; set; }
-        public Nullable<decimal> bcTotalWetWeight { get; set; }
+        public Nullable<long> bcTotalGcWeight { get; set; }
+        public Nullable<long> bcTotalDryWeight { get; set; }
+        public Nullable<long> bcTotalWetWeight { get; set; }
         public Nullable<System.TimeSpan> tHr { get; set; }
         public Nullable<int> tNh { get; set; }
+        public Nullable<long> bcThr { get; set; }
     }
 }

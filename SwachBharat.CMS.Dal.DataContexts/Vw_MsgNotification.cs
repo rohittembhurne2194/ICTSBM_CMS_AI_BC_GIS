@@ -31,6 +31,5 @@ namespace SwachBharat.CMS.Dal.DataContexts
         public string gcTarget { get; set; }
         public string EmployeeType { get; set; }
         public string imoNo2 { get; set; }
-        public string shiftIds { get; set; }
     }
 }
