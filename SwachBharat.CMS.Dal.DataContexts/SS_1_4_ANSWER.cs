@@ -19,7 +19,6 @@ namespace SwachBharat.CMS.Dal.DataContexts
         public string TOTAL_COUNT { get; set; }
         public Nullable<System.DateTime> INSERT_DATE { get; set; }
         public Nullable<int> INSERT_ID { get; set; }
-        public string MARKS { get; set; }
     
         public virtual SS_1_4_ANSWER SS_1_4_ANSWER1 { get; set; }
         public virtual SS_1_4_ANSWER SS_1_4_ANSWER2 { get; set; }
