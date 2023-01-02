@@ -168,6 +168,7 @@ function showInventoriesGrid() {
 }
 
 function Search() {
+    debugger;
     var txt_fdate, txt_tdate, Client, UserId;
     var name = [];
     var arr = [$('#txt_fdate').val(), $('#txt_tdate').val()];
@@ -192,5 +193,5 @@ function Search() {
     oTable = $('#demoGrid').DataTable();
     oTable.search(value).draw();
     oTable.search("");
-    document.getElementById('USER_ID_FK').value = -1;
+   // document.getElementById('USER_ID_FK').value = -1;
 }

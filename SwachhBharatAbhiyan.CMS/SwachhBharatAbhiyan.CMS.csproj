@@ -3536,6 +3536,7 @@
     <Content Include="Views\AIReports\HouseCountForecastReport.cshtml" />
     <Content Include="Views\BC\BCDumpYardIndex.cshtml" />
     <Content Include="Views\BC\MenuBCDumpYardIndex.cshtml" />
+    <Content Include="Views\GarbageCollection\MenuDumpYardIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
