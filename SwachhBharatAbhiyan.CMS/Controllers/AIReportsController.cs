@@ -44,7 +44,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             }
             if (HostName == "localhost")
             {
-                psi.FileName = @"C:\Users\USER\AppData\Local\Programs\Python\Python37\python.exe"; // or any python environment
+                psi.FileName = @"C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe"; // or any python environment
 
 
             }
@@ -52,6 +52,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             {
                 HostName = HostName + ":" + port;
                 psi.FileName = @"C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe"; // or any python environment
+
+               
 
             }
 
