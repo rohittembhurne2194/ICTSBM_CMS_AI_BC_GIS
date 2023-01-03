@@ -118,7 +118,7 @@
 
         "columns": [
             { "data": "Id", "name": "Id", "autoWidth": false },
-            { "data": " ", "name": "attandDate", "autoWidth": false },
+            { "data": "attandDate", "name": "attandDate", "autoWidth": false },
             { "data": "Employee", "name": "Employee", "autoWidth": false },
             { "data": "ReferanceId", "name": "ReferanceId", "autoWidth": false },
             { "data": "UserName", "name": "UserName", "autoWidth": false },
