@@ -154,6 +154,7 @@ function showInventoriesGrid() {
 }
 
 function Search() {
+    debugger;
     var txt_fdate, txt_tdate, Client, UserId;
     var name = [];
     var arr = [$('#txt_fdate').val(), $('#txt_tdate').val()];
