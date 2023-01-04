@@ -96,7 +96,7 @@ if df['House_Count'].count() <= 10:  # Plot No Enough Samples
         }
     }
     fig.add_annotation(annotation)
-    fig.write_html(path + "/HouseScanforecastbar.html", config=config)
+    fig.write_html(path + "/HouseScanforecast.html", config=config)
     # graph_name = "./Forecast_graph/" + database + "_HC_Forecast.html"
     # fig.write_html(graph_name, config=config)
 
@@ -282,6 +282,6 @@ else:  # Preprocess
     }
     fig = go.Figure(data=data, layout=layout)
     # graph_name = "./Forecast_graph/" + database + "_HC_Forecast.html"
-    fig.write_html(path + "/HouseScanforecastbar.html", config=config)
+    fig.write_html(path + "/HouseScanforecast.html", config=config)
     # fig.write_html(graph_name, config=config)
     # iplot(fig)
