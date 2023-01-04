@@ -387,6 +387,8 @@
     <Content Include="AI_ReportsFiles\DumpYardForeCast\forecast_gg_bar_deply.py" />
     <Content Include="AI_ReportsFiles\EmpWise_Collection.py" />
     <Content Include="AI_ReportsFiles\heatmap_Armori.py" />
+    <Content Include="AI_ReportsFiles\HouseScanForecast\forecast_hc_bar_deply.py" />
+    <Content Include="AI_ReportsFiles\HouseScanForecast\forecast_hc_deply.py" />
     <Content Include="AI_ReportsFiles\HouseScanForecast\HouseScanForeCast.py" />
     <Content Include="Areas\Liquid\Content\Custom\HomeIndex.js" />
     <Content Include="Areas\Liquid\Content\images\011320160335_67ec.jpg" />
@@ -3537,6 +3539,7 @@
     <Content Include="Views\BC\BCDumpYardIndex.cshtml" />
     <Content Include="Views\BC\MenuBCDumpYardIndex.cshtml" />
     <Content Include="Views\GarbageCollection\MenuDumpYardIndex.cshtml" />
+    <Content Include="Views\AIReports\HouseForecastBarReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
