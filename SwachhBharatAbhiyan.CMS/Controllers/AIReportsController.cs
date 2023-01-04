@@ -34,7 +34,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             string HostName = Request.Url.Host;
             string port = Convert.ToString(Request.Url.Port);
 
-
+            Console.WriteLine("The Hostname are = " + HostName);
             string path = Server.MapPath("~/Images/AI/" + trim_ULB_Name + "/DumpYardforecast.html");
             FileInfo file = new FileInfo(path);
             if (file.Exists)
