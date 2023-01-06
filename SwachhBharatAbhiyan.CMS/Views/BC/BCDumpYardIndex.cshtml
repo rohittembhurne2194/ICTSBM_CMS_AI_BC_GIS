@@ -10,7 +10,19 @@
 @Scripts.Render("~/Scripts/IndexScript")
 <script src="~/Content/DatatableGrid/BCDumpTrip.js"></script>
 <script src="~/Content/Custom/LoadZoneWardArea.js"></script>
+<style>
+   
 
+    /* Important part */
+        #mymodal-dialog {
+            overflow-y: initial !important
+        }
+
+        #myModal_body {
+            height: 40vh;
+            overflow-y: auto;
+        }
+</style>
 
 <body>
     <div hidden="hidden">
@@ -142,31 +154,30 @@
     </div>
 
     <div id="myModal_Image" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" style="width: 40%;">
+        <div class="modal-dialog modal-lg" style="width: 40%;height:40%">
 
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" id="mymodal-dialog">
                 <div class="modal-header">
-                    <h4 id="header_data" class="modal-title" style="margin-left: 25%;">Scanned House List</h4>
+                    <h1 id="header_data" class="modal-title" style="margin-left: 17%;">Scanned House List</h1>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body" id="myModal_body">
                     <center>
-                       
-                       
-                     <div id="dateData" class="overflow-auto">
-                    
+
+
+                        <div id="dateData"    style=" text-align: initial; margin-left: 30%;">
+
                             @*<p>HPSBA1040 (Roshan K)</p>
-                            <p>HPSBA1041 (Rohit K)</p>*@
+                    <p>HPSBA1041 (Rohit K)</p>*@
                         </div>
                     </center>
 
-                    <div class="modal-footer">
-                        <button type="button" id="ctbtn" onclick="CTBT();" class="btn" data-dismiss="modal">Close</button>
-                        @*<a href="~/Images/Nagpur/Job/download.pdf" class="btn btn-default" download>Download</a>*@
-                    </div>
                 </div>
-
+                <div class="modal-footer">
+                    <button type="button" id="ctbtn" onclick="CTBT();" class="btn" data-dismiss="modal">Close</button>
+                    @*<a href="~/Images/Nagpur/Job/download.pdf" class="btn btn-default" download>Download</a>*@
+                </div>
             </div>
         </div>
     </div>

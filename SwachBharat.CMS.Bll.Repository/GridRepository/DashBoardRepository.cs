@@ -2978,11 +2978,11 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                             if(hon!=null)
                             { 
                             
-                                st = st.AppendLine(("<p>"+cto + " (" + hon + ")</p>").ToString());
+                                st = st.AppendLine(("<p style='margin-top: 0; margin-bottom: 0px;'>" + cto + " (" + hon + ")</p>").ToString());
                             }
                             else
                             {
-                               st = st.AppendLine("<p>" + cto+ "</p>");
+                               st = st.AppendLine("<p style='margin-top: 0; margin-bottom: 0px;'>" + cto+ "</p>");
                                 
                             }
 

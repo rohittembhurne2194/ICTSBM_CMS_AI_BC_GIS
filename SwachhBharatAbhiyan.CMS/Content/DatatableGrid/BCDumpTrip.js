@@ -148,7 +148,7 @@ function ViewBT(bcTransId) {
 };
 function CTBT() {
     debugger;
-    jQuery("#dateData").empty();
+   jQuery("#dateData").empty();
     
 };
 $("#ctbtn").click(function () {
