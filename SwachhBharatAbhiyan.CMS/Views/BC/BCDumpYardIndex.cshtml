@@ -11,6 +11,7 @@
 <script src="~/Content/DatatableGrid/BCDumpTrip.js"></script>
 <script src="~/Content/Custom/LoadZoneWardArea.js"></script>
 
+
 <body>
     <div hidden="hidden">
         @Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Manage", @id = "asdf" })
@@ -141,24 +142,27 @@
     </div>
 
     <div id="myModal_Image" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg" style="width: 40%;">
 
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="header_data" class="modal-title" style="margin-left: 36%;">Scanned House List</h4>
+                    <h4 id="header_data" class="modal-title" style="margin-left: 25%;">Scanned House List</h4>
                 </div>
 
                 <div class="modal-body">
                     <center>
                        
                        
-                        <p><b><span id="dateData"></span></b></p>
-                       
+                     <div id="dateData" class="overflow-auto">
+                    
+                            @*<p>HPSBA1040 (Roshan K)</p>
+                            <p>HPSBA1041 (Rohit K)</p>*@
+                        </div>
                     </center>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                        <button type="button" id="ctbtn" onclick="CTBT();" class="btn" data-dismiss="modal">Close</button>
                         @*<a href="~/Images/Nagpur/Job/download.pdf" class="btn btn-default" download>Download</a>*@
                     </div>
                 </div>

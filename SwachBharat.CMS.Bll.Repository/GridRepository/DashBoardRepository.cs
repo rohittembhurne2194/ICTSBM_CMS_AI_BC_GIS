@@ -2960,6 +2960,7 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                  
                     foreach (var x in data1)
                     {
+                        StringBuilder st = new StringBuilder();
                         StringBuilder htr = new StringBuilder();
                         var hslist = data1.Where(c => c.bcTransId == x.bcTransId).Select(c =>
                       c.houseList
@@ -2971,25 +2972,27 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                         int ct = 0;
                         foreach (var hn in sr)
                         {
-                            string st = string.Empty;
+                           
                             string cto = sr[ct];
                             var hon = db.HouseMasters.Where(c => c.ReferanceId == cto).Select(c => c.houseOwner).FirstOrDefault();
                             if(hon!=null)
                             { 
-                            st = (cto + " (" + hon + "),").ToString();
-                               
+                            
+                                st = st.AppendLine(("<p>"+cto + " (" + hon + ")</p>").ToString());
                             }
                             else
                             {
-                                st = cto+",";
+                               st = st.AppendLine("<p>" + cto+ "</p>");
                                 
                             }
 
-                            htr.Append(st);
+                           // htr.Append(st);
+                            //htr.AppendLine("<>");
+                            //htr.ToString().Contains("\r\n");
                             ct++;
                         }
-                        string htl = htr.ToString();
-                        htl = htl.Substring(0, htr.Length - 1);
+                        //string htl = htr.ToString();
+                        //htl = htl.Substring(0, htr.Length - 1);
                         data.Add(new ICTDumTripGridRow
                         {
                             TransBcId = x.TransBcId,
@@ -2997,7 +3000,7 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                             transId = x.transId,
                             startDateTime = Convert.ToDateTime(x.startDateTime).ToString("dd/MM/yyyy hh:mm tt"),
                             endDateTime = Convert.ToDateTime(x.endDateTime).ToString("dd/MM/yyyy hh:mm tt"),
-                            houseList = htl,
+                            houseList = st.ToString(),
                             tripNo = x.tripNo,
                             userName = x.userName,
                             totalGcWeight = x.totalGcWeight,
