@@ -36,5 +36,11 @@ namespace SwachBharat.CMS.Dal.DataContexts
         public Nullable<System.TimeSpan> tHr { get; set; }
         public Nullable<int> tNh { get; set; }
         public Nullable<long> bcThr { get; set; }
+        public Nullable<decimal> UsTotalGcWeight { get; set; }
+        public Nullable<decimal> UsTotalDryWeight { get; set; }
+        public Nullable<decimal> UsTotalWetWeight { get; set; }
+        public Nullable<decimal> TotalGcWeightKg { get; set; }
+        public Nullable<decimal> TotalDryWeightKg { get; set; }
+        public Nullable<decimal> TotalWetWeightKg { get; set; }
     }
 }

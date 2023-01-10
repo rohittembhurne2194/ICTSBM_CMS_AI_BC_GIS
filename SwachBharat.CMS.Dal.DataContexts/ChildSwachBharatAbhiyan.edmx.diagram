@@ -45,12 +45,12 @@
         <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.VehicleRegistration" Width="1.5" PointX="19.375" PointY="4.75" />
         <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.HouseMaster" Width="1.5" PointX="0.75" PointY="18.75" />
         <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.Vw_MsgNotification" Width="1.5" PointX="19.375" PointY="22.75" />
-        <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.TransDumpTD" Width="1.5" PointX="3.375" PointY="18.75" />
         <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.SS_1_4_ANSWER" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="DevSwachhBharatNagpurModel.FK_SS_1_4_ANSWER_SS_1_4_ANSWER" />
         <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.VW_HSGetStreetDetails" Width="1.5" PointX="9.375" PointY="14.75" />
         <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.MonthlyAttedance" Width="1.5" PointX="9.375" PointY="19.75" />
         <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.VW_HSGetHouseDetails" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DevSwachhBharatNagpurModel.TransDumpTD" Width="1.5" PointX="3.625" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

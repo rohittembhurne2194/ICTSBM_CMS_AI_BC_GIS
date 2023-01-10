@@ -2929,6 +2929,9 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                                      t1.totalGcWeight,
                                      t1.totalDryWeight,
                                      t1.totalWetWeight,
+                                     t1.TotalDryWeightKg,
+                                     t1.TotalWetWeightKg,
+                                     t1.TotalGcWeightKg,
                                      t2.userName,
                                      t3.ReferanceId,
                                      t3.dyName,
@@ -3010,7 +3013,10 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                             dyId = x.dyId,
                             TStatus = x.TStatus,
                             tHr = Convert.ToString(x.tHr),
-                            tNh = Convert.ToString(x.tNh)
+                            tNh = Convert.ToString(x.tNh),
+                            totalDryWeightkg=x.TotalDryWeightKg,
+                            totalWetWeightkg=x.TotalWetWeightKg,
+                            totalGcWeightkg=x.TotalGcWeightKg
                         }) ;                
                     }
                     if (!string.IsNullOrEmpty(SearchString))

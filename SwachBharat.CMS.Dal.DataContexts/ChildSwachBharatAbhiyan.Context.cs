@@ -17,9 +17,8 @@ namespace SwachBharat.CMS.Dal.DataContexts
     
     public partial class DevChildSwachhBharatNagpurEntities : DbContext
     {
-
         public DevChildSwachhBharatNagpurEntities(int AppId)
-                       : base(SwachBharatAppConnection.GetConnectionString(AppId))
+                  : base(SwachBharatAppConnection.GetConnectionString(AppId))
         {
         }
 
@@ -67,11 +66,11 @@ namespace SwachBharat.CMS.Dal.DataContexts
         public virtual DbSet<VehicleRegistration> VehicleRegistrations { get; set; }
         public virtual DbSet<HouseMaster> HouseMasters { get; set; }
         public virtual DbSet<Vw_MsgNotification> Vw_MsgNotification { get; set; }
-        public virtual DbSet<TransDumpTD> TransDumpTDs { get; set; }
         public virtual DbSet<SS_1_4_ANSWER> SS_1_4_ANSWER { get; set; }
         public virtual DbSet<VW_HSGetStreetDetails> VW_HSGetStreetDetails { get; set; }
         public virtual DbSet<MonthlyAttedance> MonthlyAttedances { get; set; }
         public virtual DbSet<VW_HSGetHouseDetails> VW_HSGetHouseDetails { get; set; }
+        public virtual DbSet<TransDumpTD> TransDumpTDs { get; set; }
     
         public virtual ObjectResult<GetAttendenceDetailsTotal_Result> GetAttendenceDetailsTotal(Nullable<int> userId, Nullable<int> year, Nullable<int> month)
         {

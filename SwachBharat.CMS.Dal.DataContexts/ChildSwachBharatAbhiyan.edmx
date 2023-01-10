@@ -512,6 +512,12 @@ warning 6002: The table/view 'LIVEAdvanceDevSwachhBharatNagpur.dbo.SS_1.4_QUESTI
           <Property Name="tHr" Type="time" Precision="7" />
           <Property Name="tNh" Type="int" />
           <Property Name="bcThr" Type="bigint" />
+          <Property Name="UsTotalGcWeight" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="UsTotalDryWeight" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="UsTotalWetWeight" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="TotalGcWeightKg" Type="numeric" Precision="18" Scale="10" />
+          <Property Name="TotalDryWeightKg" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TotalWetWeightKg" Type="decimal" Precision="18" Scale="10" />
         </EntityType>
         <EntityType Name="UserMaster">
           <Key>
@@ -1396,7 +1402,6 @@ warning 6002: The table/view 'LIVEAdvanceDevSwachhBharatNagpur.dbo.Vw_MsgNotific
           <FunctionImport Name="MasterQRBunchDetails" ReturnType="Collection(DevSwachhBharatNagpurModel.MasterQRBunchDetails_Result)" />
           <EntitySet Name="HouseMasters" EntityType="DevSwachhBharatNagpurModel.HouseMaster" />
           <EntitySet Name="Vw_MsgNotification" EntityType="DevSwachhBharatNagpurModel.Vw_MsgNotification" />
-          <EntitySet Name="TransDumpTDs" EntityType="DevSwachhBharatNagpurModel.TransDumpTD" />
           <EntitySet Name="SS_1_4_ANSWER" EntityType="DevSwachhBharatNagpurModel.SS_1_4_ANSWER" />
           <AssociationSet Name="FK_SS_1_4_ANSWER_SS_1_4_ANSWER" Association="DevSwachhBharatNagpurModel.FK_SS_1_4_ANSWER_SS_1_4_ANSWER">
             <End Role="SS_1_4_ANSWER" EntitySet="SS_1_4_ANSWER" />
@@ -1405,6 +1410,7 @@ warning 6002: The table/view 'LIVEAdvanceDevSwachhBharatNagpur.dbo.Vw_MsgNotific
           <EntitySet Name="VW_HSGetStreetDetails" EntityType="DevSwachhBharatNagpurModel.VW_HSGetStreetDetails" />
           <EntitySet Name="MonthlyAttedances" EntityType="DevSwachhBharatNagpurModel.MonthlyAttedance" />
           <EntitySet Name="VW_HSGetHouseDetails" EntityType="DevSwachhBharatNagpurModel.VW_HSGetHouseDetails" />
+          <EntitySet Name="TransDumpTDs" EntityType="DevSwachhBharatNagpurModel.TransDumpTD" />
          
         </EntityContainer>
         <ComplexType Name="CurrentAllUserLocation_Result">
@@ -2790,33 +2796,6 @@ warning 6002: The table/view 'LIVEAdvanceDevSwachhBharatNagpur.dbo.Vw_MsgNotific
           <Property Name="EmployeeType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="imoNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TransDumpTD">
-          <Key>
-            <PropertyRef Name="TransBcId" />
-          </Key>
-          <Property Name="TransBcId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="transId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="startDateTime" Type="DateTime" Precision="3" />
-          <Property Name="endDateTime" Type="DateTime" Precision="3" />
-          <Property Name="userId" Type="Int32" />
-          <Property Name="dyId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="houseList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="tripNo" Type="Int32" />
-          <Property Name="vehicleNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="totalGcWeight" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="totalDryWeight" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="totalWetWeight" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="bcTransId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="TStatus" Type="Boolean" />
-          <Property Name="bcStartDateTime" Type="Int64" />
-          <Property Name="bcEndDateTime" Type="Int64" />
-          <Property Name="bcTotalGcWeight" Type="Int64" />
-          <Property Name="bcTotalDryWeight" Type="Int64" />
-          <Property Name="bcTotalWetWeight" Type="Int64" />
-          <Property Name="tHr" Type="Time" Precision="7" />
-          <Property Name="tNh" Type="Int32" />
-          <Property Name="bcThr" Type="Int64" />
-        </EntityType>
         <EntityType Name="SS_1_4_ANSWER">
           <Key>
             <PropertyRef Name="ANS_ID" />
@@ -2921,6 +2900,39 @@ warning 6002: The table/view 'LIVEAdvanceDevSwachhBharatNagpur.dbo.Vw_MsgNotific
           <Property Name="houseOwner" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="BinaryQrCodeImage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="FilterTotalCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TransDumpTD">
+          <Key>
+            <PropertyRef Name="TransBcId" />
+          </Key>
+          <Property Name="TransBcId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="startDateTime" Type="DateTime" Precision="3" />
+          <Property Name="endDateTime" Type="DateTime" Precision="3" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="dyId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="houseList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tripNo" Type="Int32" />
+          <Property Name="vehicleNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="totalGcWeight" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="totalDryWeight" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="totalWetWeight" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="bcTransId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TStatus" Type="Boolean" />
+          <Property Name="bcStartDateTime" Type="Int64" />
+          <Property Name="bcEndDateTime" Type="Int64" />
+          <Property Name="bcTotalGcWeight" Type="Int64" />
+          <Property Name="bcTotalDryWeight" Type="Int64" />
+          <Property Name="bcTotalWetWeight" Type="Int64" />
+          <Property Name="tHr" Type="Time" Precision="7" />
+          <Property Name="tNh" Type="Int32" />
+          <Property Name="bcThr" Type="Int64" />
+          <Property Name="UsTotalGcWeight" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="UsTotalDryWeight" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="UsTotalWetWeight" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TotalGcWeightKg" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TotalDryWeightKg" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TotalWetWeightKg" Type="Decimal" Precision="18" Scale="10" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4398,34 +4410,6 @@ warning 6002: The table/view 'LIVEAdvanceDevSwachhBharatNagpur.dbo.Vw_MsgNotific
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TransDumpTDs">
-            <EntityTypeMapping TypeName="DevSwachhBharatNagpurModel.TransDumpTD">
-              <MappingFragment StoreEntitySet="TransDumpTD">
-                <ScalarProperty Name="bcThr" ColumnName="bcThr" />
-                <ScalarProperty Name="tNh" ColumnName="tNh" />
-                <ScalarProperty Name="tHr" ColumnName="tHr" />
-                <ScalarProperty Name="bcTotalWetWeight" ColumnName="bcTotalWetWeight" />
-                <ScalarProperty Name="bcTotalDryWeight" ColumnName="bcTotalDryWeight" />
-                <ScalarProperty Name="bcTotalGcWeight" ColumnName="bcTotalGcWeight" />
-                <ScalarProperty Name="bcEndDateTime" ColumnName="bcEndDateTime" />
-                <ScalarProperty Name="bcStartDateTime" ColumnName="bcStartDateTime" />
-                <ScalarProperty Name="TStatus" ColumnName="TStatus" />
-                <ScalarProperty Name="bcTransId" ColumnName="bcTransId" />
-                <ScalarProperty Name="totalWetWeight" ColumnName="totalWetWeight" />
-                <ScalarProperty Name="totalDryWeight" ColumnName="totalDryWeight" />
-                <ScalarProperty Name="totalGcWeight" ColumnName="totalGcWeight" />
-                <ScalarProperty Name="vehicleNumber" ColumnName="vehicleNumber" />
-                <ScalarProperty Name="tripNo" ColumnName="tripNo" />
-                <ScalarProperty Name="houseList" ColumnName="houseList" />
-                <ScalarProperty Name="dyId" ColumnName="dyId" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
-                <ScalarProperty Name="endDateTime" ColumnName="endDateTime" />
-                <ScalarProperty Name="startDateTime" ColumnName="startDateTime" />
-                <ScalarProperty Name="transId" ColumnName="transId" />
-                <ScalarProperty Name="TransBcId" ColumnName="TransBcId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SS_1_4_ANSWER">
             <EntityTypeMapping TypeName="DevSwachhBharatNagpurModel.SS_1_4_ANSWER">
               <MappingFragment StoreEntitySet="SS_1_4_ANSWER">
@@ -4517,6 +4501,40 @@ warning 6002: The table/view 'LIVEAdvanceDevSwachhBharatNagpur.dbo.Vw_MsgNotific
                 <ScalarProperty Name="houseLat" ColumnName="houseLat" />
                 <ScalarProperty Name="houseId" ColumnName="houseId" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransDumpTDs">
+            <EntityTypeMapping TypeName="DevSwachhBharatNagpurModel.TransDumpTD">
+              <MappingFragment StoreEntitySet="TransDumpTD">
+                <ScalarProperty Name="TotalWetWeightKg" ColumnName="TotalWetWeightKg" />
+                <ScalarProperty Name="TotalDryWeightKg" ColumnName="TotalDryWeightKg" />
+                <ScalarProperty Name="TotalGcWeightKg" ColumnName="TotalGcWeightKg" />
+                <ScalarProperty Name="UsTotalWetWeight" ColumnName="UsTotalWetWeight" />
+                <ScalarProperty Name="UsTotalDryWeight" ColumnName="UsTotalDryWeight" />
+                <ScalarProperty Name="UsTotalGcWeight" ColumnName="UsTotalGcWeight" />
+                <ScalarProperty Name="bcThr" ColumnName="bcThr" />
+                <ScalarProperty Name="tNh" ColumnName="tNh" />
+                <ScalarProperty Name="tHr" ColumnName="tHr" />
+                <ScalarProperty Name="bcTotalWetWeight" ColumnName="bcTotalWetWeight" />
+                <ScalarProperty Name="bcTotalDryWeight" ColumnName="bcTotalDryWeight" />
+                <ScalarProperty Name="bcTotalGcWeight" ColumnName="bcTotalGcWeight" />
+                <ScalarProperty Name="bcEndDateTime" ColumnName="bcEndDateTime" />
+                <ScalarProperty Name="bcStartDateTime" ColumnName="bcStartDateTime" />
+                <ScalarProperty Name="TStatus" ColumnName="TStatus" />
+                <ScalarProperty Name="bcTransId" ColumnName="bcTransId" />
+                <ScalarProperty Name="totalWetWeight" ColumnName="totalWetWeight" />
+                <ScalarProperty Name="totalDryWeight" ColumnName="totalDryWeight" />
+                <ScalarProperty Name="totalGcWeight" ColumnName="totalGcWeight" />
+                <ScalarProperty Name="vehicleNumber" ColumnName="vehicleNumber" />
+                <ScalarProperty Name="tripNo" ColumnName="tripNo" />
+                <ScalarProperty Name="houseList" ColumnName="houseList" />
+                <ScalarProperty Name="dyId" ColumnName="dyId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="endDateTime" ColumnName="endDateTime" />
+                <ScalarProperty Name="startDateTime" ColumnName="startDateTime" />
+                <ScalarProperty Name="transId" ColumnName="transId" />
+                <ScalarProperty Name="TransBcId" ColumnName="TransBcId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
