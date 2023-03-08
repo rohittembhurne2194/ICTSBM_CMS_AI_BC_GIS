@@ -48,7 +48,7 @@
             },
 
             {
-                "targets": [15],
+                "targets": [18],
 
                 "visible": true,
 
@@ -86,7 +86,9 @@
             { "data": "tripNo", "name": "tripNo", "autoWidth": false },
             { "data": "tNh", "name": "tNh", "autoWidth": false },
             { "data": "tHr", "name": "tHr", "autoWidth": false },
-
+            { "data": "totalGcWeightkg", "name": "totalGcWeightkg", "autoWidth": false },
+            { "data": "totalDryWeightkg", "name": "totalDryWeightkg", "autoWidth": false },
+            { "data": "totalWetWeightkg", "name": "totalWetWeightkg", "autoWidth": false },
             { "data": "totalGcWeight", "name": "totalGcWeight", "autoWidth": false },
             { "data": "totalDryWeight", "name": "totalDryWeight", "autoWidth": false },
             { "data": "totalWetWeight", "name": "totalWetWeight", "autoWidth": false },
@@ -109,7 +111,11 @@
 
         var data = table.row($(this).parents('tr')).data();
         $('#myModal_Image').modal('toggle');
-        jQuery("#dateData").text(data.houseList);
+      
+        var  dummyString = data.houseList;
+        dummyString = dummyString.split('"').join("");
+        /* dummyString = console.log(dummyString);*/
+        jQuery("#dateData").append(dummyString);
         $('#myModal_Image').modal('show');
     });
     //debugger;
@@ -142,6 +148,18 @@ function ViewBT(bcTransId) {
     debugger;
     window.location.href = "https://mumbai.polygonscan.com/tx/" + bcTransId;
 };
+function CTBT() {
+    debugger;
+   jQuery("#dateData").empty();
+    
+};
+$("#ctbtn").click(function () {
+    debugger;
+    $('html, body').animate({
+        scrollTop: $("#dateData").offset().top
+    }, 20);
+});
+
 $('.edit').click(function () {
     $('#editModal').modal('show');
 });

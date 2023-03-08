@@ -2908,9 +2908,13 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                                  from t5 in wm.DefaultIfEmpty()
                                  join tm in db.TeritoryMasters on t3.areaId equals tm.Id into tm
                                  from t6 in tm.DefaultIfEmpty()
+                                 join th in db.HouseMasters on t3.ReferanceId equals th.ReferanceId into th
+                                 from t7 in th.DefaultIfEmpty()
+                                
                                  where (t3.zoneId == param1 || param1 == 0 || param1 == null) && (t5.Id == param2 || param2 == 0 || param2 == null) && (t6.Id == param3 || param3 == 0 || param3 == null)
                                  select new
                                  {
+                                     t7.houseOwner,
                                      t1.TransBcId,
                                      t1.bcTransId,
                                      t1.transId,
@@ -2925,12 +2929,16 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                                      t1.totalGcWeight,
                                      t1.totalDryWeight,
                                      t1.totalWetWeight,
+                                     t1.TotalDryWeightKg,
+                                     t1.TotalWetWeightKg,
+                                     t1.TotalGcWeightKg,
                                      t2.userName,
                                      t3.ReferanceId,
                                      t3.dyName,
                                      t3.zoneId,
                                      t3.wardId,
                                      t3.areaId,
+                                   
                                      WardName = t5.WardNo,
                                      AreaName = t6.Area,
                                       t1.TStatus,   
@@ -2950,9 +2958,44 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                         var model = data1.Where(c => c.userId == userId).ToList();
 
                         data1 = model.ToList();
+
                     }
+                 
                     foreach (var x in data1)
                     {
+                        StringBuilder st = new StringBuilder();
+                        StringBuilder htr = new StringBuilder();
+                        var hslist = data1.Where(c => c.bcTransId == x.bcTransId).Select(c =>
+                      c.houseList
+                    ).FirstOrDefault();
+
+                        string hsar = hslist;
+
+                        string[] sr = hsar.Split(',');
+                        int ct = 0;
+                        foreach (var hn in sr)
+                        {
+                           
+                            string cto = sr[ct];
+                            var hon = db.HouseMasters.Where(c => c.ReferanceId == cto).Select(c => c.houseOwner).FirstOrDefault();
+                            if(hon!=null)
+                            { 
+                            
+                                st = st.AppendLine(("<p style='margin-top: 0; margin-bottom: 0px;'>" + cto + " (" + hon + ")</p>").ToString());
+                            }
+                            else
+                            {
+                               st = st.AppendLine("<p style='margin-top: 0; margin-bottom: 0px;'>" + cto+ "</p>");
+                                
+                            }
+
+                           // htr.Append(st);
+                            //htr.AppendLine("<>");
+                            //htr.ToString().Contains("\r\n");
+                            ct++;
+                        }
+                        //string htl = htr.ToString();
+                        //htl = htl.Substring(0, htr.Length - 1);
                         data.Add(new ICTDumTripGridRow
                         {
                             TransBcId = x.TransBcId,
@@ -2960,7 +3003,7 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                             transId = x.transId,
                             startDateTime = Convert.ToDateTime(x.startDateTime).ToString("dd/MM/yyyy hh:mm tt"),
                             endDateTime = Convert.ToDateTime(x.endDateTime).ToString("dd/MM/yyyy hh:mm tt"),
-                            houseList = x.houseList,
+                            houseList = st.ToString(),
                             tripNo = x.tripNo,
                             userName = x.userName,
                             totalGcWeight = x.totalGcWeight,
@@ -2970,7 +3013,10 @@ namespace SwachBharat.CMS.Bll.Repository.GridRepository
                             dyId = x.dyId,
                             TStatus = x.TStatus,
                             tHr = Convert.ToString(x.tHr),
-                            tNh = Convert.ToString(x.tNh)
+                            tNh = Convert.ToString(x.tNh),
+                            totalDryWeightkg=x.TotalDryWeightKg,
+                            totalWetWeightkg=x.TotalWetWeightKg,
+                            totalGcWeightkg=x.TotalGcWeightKg
                         }) ;                
                     }
                     if (!string.IsNullOrEmpty(SearchString))

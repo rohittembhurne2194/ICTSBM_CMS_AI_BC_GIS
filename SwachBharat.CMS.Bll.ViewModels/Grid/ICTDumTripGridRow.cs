@@ -27,7 +27,11 @@ namespace SwachBharat.CMS.Bll.ViewModels.Grid
 
         public string tHr { get; set; }
         public string tNh { get; set; }
-        
+
+        public Nullable<decimal> totalGcWeightkg { get; set; }
+        public Nullable<decimal> totalDryWeightkg { get; set; }
+        public Nullable<decimal> totalWetWeightkg { get; set; }
+
 
     }
 }

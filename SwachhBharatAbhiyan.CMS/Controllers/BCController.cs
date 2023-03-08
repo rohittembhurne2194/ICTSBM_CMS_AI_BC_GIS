@@ -41,8 +41,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
         {
             if (SessionHandler.Current.AppId != 0)
             {
-                var details = childRepository.GetDashBoardDetails();
-                return View(details);
+             //   var details = childRepository.GetDashBoardDetails();
+                return View();
             }
             else
                 return Redirect("/Account/Login");

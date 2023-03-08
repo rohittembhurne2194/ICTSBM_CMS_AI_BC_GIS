@@ -10,13 +10,26 @@
 @Scripts.Render("~/Scripts/IndexScript")
 <script src="~/Content/DatatableGrid/BCDumpTrip.js"></script>
 <script src="~/Content/Custom/LoadZoneWardArea.js"></script>
+<style>
+   
+
+    /* Important part */
+        #mymodal-dialog {
+            overflow-y: initial !important
+        }
+
+        #myModal_body {
+            height: 40vh;
+            overflow-y: auto;
+        }
+</style>
 
 <body>
     <div hidden="hidden">
         @Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Manage", @id = "asdf" })
     </div>
     <div class="container" style="padding-top:8px">
-        <div class="row">
+        @*<div class="row">
             <div class="col-sm-4">
                 <div class="card" style="width: 18rem; border-color:#ff7676">
                     <div class="card-body" style="padding:3px">
@@ -41,7 +54,7 @@
                     </div>
                 </div>
             </div>
-        </div><br />
+        </div><br />*@
         <div class="row">
             <div class="col-sm-3">
                 <div class="controls">
@@ -108,6 +121,9 @@
                         <th> Trip No </th>
                         <th>  No Of House </th>
                         <th> Total Time </th>
+                        <th> Total Weight (Kg) </th>
+                        <th> Dry Weight (Kg) </th>
+                        <th> Wet Weight (Kg) </th>
                         <th> Total Weight (Ton) </th>
                         <th> Dry Weight (Ton) </th>
                         <th> Wet Weight (Ton) </th>
@@ -141,28 +157,30 @@
     </div>
 
     <div id="myModal_Image" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg" style="width: 40%;height:40%">
 
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" id="mymodal-dialog">
                 <div class="modal-header">
-                    <h4 id="header_data" class="modal-title" style="margin-left: 36%;">Scanned House List</h4>
+                    <h1 id="header_data" class="modal-title" style="margin-left: 17%;">Scanned House List</h1>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body" id="myModal_body">
                     <center>
-                       
-                       
-                        <p><b><span id="dateData"></span></b></p>
-                       
+
+
+                        <div id="dateData"    style=" text-align: initial; margin-left: 30%;">
+
+                            @*<p>HPSBA1040 (Roshan K)</p>
+                    <p>HPSBA1041 (Rohit K)</p>*@
+                        </div>
                     </center>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn" data-dismiss="modal">Close</button>
-                        @*<a href="~/Images/Nagpur/Job/download.pdf" class="btn btn-default" download>Download</a>*@
-                    </div>
                 </div>
-
+                <div class="modal-footer">
+                    <button type="button" id="ctbtn" onclick="CTBT();" class="btn" data-dismiss="modal">Close</button>
+                    @*<a href="~/Images/Nagpur/Job/download.pdf" class="btn btn-default" download>Download</a>*@
+                </div>
             </div>
         </div>
     </div>
