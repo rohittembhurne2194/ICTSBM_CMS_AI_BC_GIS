@@ -148,6 +148,9 @@ namespace SwachBharat.CMS.Bll.Repository.MainRepository
         public AppDetailsVM GetApplicationDetails(int AppId)
         {
             return mainService.GetApplicationDetails(AppId);
+        } public AppDetailsVM GetGisLoginDetails(int AppId)
+        {
+            return mainService.GetGisLoginDetails(AppId);
         }
         public int GetUserAppId(string UserId)
         {

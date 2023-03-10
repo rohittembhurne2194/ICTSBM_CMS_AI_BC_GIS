@@ -53,5 +53,8 @@ namespace SwachBharat.CMS.Bll.ViewModels.MainModel
         public string YoccDndLink { get; set; }
 
         public string VehicalQRCode { get; set; }
+
+        public string GisUsername { get; set; }
+        public string GisPassword { get; set; }
     }
 }

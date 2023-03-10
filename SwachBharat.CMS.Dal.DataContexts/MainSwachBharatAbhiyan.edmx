@@ -170,6 +170,22 @@
           <Property Name="Today_MixedCount" Type="int" />
           <Property Name="Today_SegregatedCount" Type="int" />
           <Property Name="Today_GarbageNRCount" Type="int" />
+          <Property Name="ulb_Liquid_Property" Type="int" />
+          <Property Name="ulb_Street_Property" Type="int" />
+          <Property Name="ulb_Dump_Property" Type="int" />
+          <Property Name="Total_HouseScan_Property" Type="int" />
+          <Property Name="Total_LiquidScan_Property" Type="int" />
+          <Property Name="Total_StreetScan_Property" Type="int" />
+          <Property Name="Total_DumpScan_Property" Type="int" />
+        </EntityType>
+        <EntityType Name="AspNetGisUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -462,6 +478,7 @@
           <EntitySet Name="AEmployeeMaster" EntityType="Self.AEmployeeMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AppConnection" EntityType="Self.AppConnection" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AppDetails" EntityType="Self.AppDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetGisUsers" EntityType="Self.AspNetGisUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
@@ -618,6 +635,7 @@
           <EntitySet Name="AD_USER_MST_STREET" EntityType="DevSwachhBharatMainModel.AD_USER_MST_STREET" />
           <EntitySet Name="CheckAppDs" EntityType="DevSwachhBharatMainModel.CheckAppD" />
           <EntitySet Name="Sauchalay_feedback" EntityType="DevSwachhBharatMainModel.Sauchalay_feedback" />
+          <EntitySet Name="AspNetGisUsers" EntityType="DevSwachhBharatMainModel.AspNetGisUser" />
         </EntityContainer>
         <EntityType Name="Game_AnswerType">
           <Key>
@@ -872,6 +890,13 @@
           <Property Name="Today_MixedCount" Type="Int32" />
           <Property Name="Today_SegregatedCount" Type="Int32" />
           <Property Name="Today_GarbageNRCount" Type="Int32" />
+          <Property Name="ulb_Liquid_Property" Type="Int32" />
+          <Property Name="ulb_Street_Property" Type="Int32" />
+          <Property Name="ulb_Dump_Property" Type="Int32" />
+          <Property Name="Total_HouseScan_Property" Type="Int32" />
+          <Property Name="Total_LiquidScan_Property" Type="Int32" />
+          <Property Name="Total_StreetScan_Property" Type="Int32" />
+          <Property Name="Total_DumpScan_Property" Type="Int32" />
         </EntityType>
         <EntityType Name="UR_Location">
           <Key>
@@ -1018,6 +1043,15 @@
           <Property Name="que9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="que10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="que11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetGisUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1269,6 +1303,13 @@
           <EntitySetMapping Name="AppDetails">
             <EntityTypeMapping TypeName="DevSwachhBharatMainModel.AppDetail">
               <MappingFragment StoreEntitySet="AppDetails">
+                <ScalarProperty Name="Total_DumpScan_Property" ColumnName="Total_DumpScan_Property" />
+                <ScalarProperty Name="Total_StreetScan_Property" ColumnName="Total_StreetScan_Property" />
+                <ScalarProperty Name="Total_LiquidScan_Property" ColumnName="Total_LiquidScan_Property" />
+                <ScalarProperty Name="Total_HouseScan_Property" ColumnName="Total_HouseScan_Property" />
+                <ScalarProperty Name="ulb_Dump_Property" ColumnName="ulb_Dump_Property" />
+                <ScalarProperty Name="ulb_Street_Property" ColumnName="ulb_Street_Property" />
+                <ScalarProperty Name="ulb_Liquid_Property" ColumnName="ulb_Liquid_Property" />
                 <ScalarProperty Name="Today_GarbageNRCount" ColumnName="Today_GarbageNRCount" />
                 <ScalarProperty Name="Today_SegregatedCount" ColumnName="Today_SegregatedCount" />
                 <ScalarProperty Name="Today_MixedCount" ColumnName="Today_MixedCount" />
@@ -1500,6 +1541,16 @@
                 <ScalarProperty Name="SauchalayID" ColumnName="SauchalayID" />
                 <ScalarProperty Name="ULB" ColumnName="ULB" />
                 <ScalarProperty Name="SauchalayFeedback_ID" ColumnName="SauchalayFeedback_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetGisUsers">
+            <EntityTypeMapping TypeName="DevSwachhBharatMainModel.AspNetGisUser">
+              <MappingFragment StoreEntitySet="AspNetGisUsers">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

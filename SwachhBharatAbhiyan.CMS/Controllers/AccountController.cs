@@ -81,6 +81,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             if (returnUrl !=null)
             {
 
+
                 if (Type == "W")
                 {
                     LoginViewModel model = new LoginViewModel();
@@ -894,37 +895,36 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 {
 
                     // Generate Token Start 21-12-2022 (Rohit)
-                    HttpClient client = new HttpClient();
+                    //HttpClient client = new HttpClient();
 
-                    string a = AppId.ToString();
+                    //string a = AppId.ToString();
 
-                    var res = Regex.Split(a, "(?<=\\G\\d{2})");
+                    //var res = Regex.Split(a, "(?<=\\G\\d{2})");
 
-                    string b = "ictsbm@" + res[0] + "@Shirdi." + res[1];
+                    //string b = "ictsbm@" + res[0] + "@Shirdi." + res[1];
 
-                    string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(b));
+                    //string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(b));
 
-                    string AppId_new = encodedStr;
-                    var json = JsonConvert.SerializeObject(Formatting.Indented);
-                    var stringContent = new StringContent(json);
-                    stringContent.Headers.ContentType.MediaType = "application/json";
-                    stringContent.Headers.Add("AppId", AppId_new);
+                    //string AppId_new = encodedStr;
+                    //var json = JsonConvert.SerializeObject(Formatting.Indented);
+                    //var stringContent = new StringContent(json);
+                    //stringContent.Headers.ContentType.MediaType = "application/json";
+                    //stringContent.Headers.Add("AppId", AppId_new);
 
-                    //var response = await client.PostAsync("http://124.153.94.110:1010/api/Account/getToken", stringContent);
+                    //var response = client.PostAsync("http://124.153.94.110:1010/api/Account/getToken", stringContent).GetAwaiter().GetResult();
 
-                    var response = client.PostAsync("http://124.153.94.110:1010/api/Account/getToken", stringContent).GetAwaiter().GetResult();
+                    //if (response.IsSuccessStatusCode)
+                    //{
+                       
+                    //    var responseContent = response.Content;
+                    //    SessionHandler.Current.Token = responseContent.ReadAsStringAsync().GetAwaiter().GetResult();
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        //SessionHandler.Current.Token = await response.Content.ReadAsStringAsync();
-                        var responseContent = response.Content;
-                        SessionHandler.Current.Token = responseContent.ReadAsStringAsync().GetAwaiter().GetResult();
-
-                    }
+                    //}
                     // Generate Token End
 
 
                 AppDetailsVM ApplicationDetails = mainrepository.GetApplicationDetails(AppId);
+                AppDetailsVM GisLoginDetails = mainrepository.GetGisLoginDetails(AppId);
                 string DB_Connect = mainrepository.GetDatabaseFromAppID(AppId);
                 string DB_Source = mainrepository.GetDataSourceFromAppID(AppId);
                 SessionHandler.Current.UserId = UserId;
@@ -943,6 +943,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 SessionHandler.Current.GramPanchyatAppID = ApplicationDetails.GramPanchyatAppID;
                 SessionHandler.Current.YoccFeddbackLink = ApplicationDetails.YoccFeddbackLink;
                 SessionHandler.Current.YoccDndLink = ApplicationDetails.YoccDndLink;
+                SessionHandler.Current.GisUsername = GisLoginDetails.GisUsername;
+                SessionHandler.Current.GisPassword = GisLoginDetails.GisPassword;
                 }
                 else
                 {

@@ -50,6 +50,7 @@ namespace SwachBharat.CMS.Bll.Repository.MainRepository
         //IEnumerable<VMApplication> GetAppId();
         //bool AddApptoUser(string UserId, int AppId, int SubscriptionId);
         AppDetailsVM GetApplicationDetails(int AppId);
+        AppDetailsVM GetGisLoginDetails(int AppId);
 
         AppAreaMapVM GetAppAreaMap(int AppId);
         List<SelectListItem> ListAppMap();

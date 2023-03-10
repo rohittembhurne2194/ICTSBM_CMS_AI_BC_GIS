@@ -785,6 +785,19 @@ namespace SwachBharat.CMS.Bll.Services
                 return null;
             }
 
+        }    
+        public AppDetailsVM GetGisLoginDetails(int AppId)
+        {
+            var GisLoginDetails = (dbMain.AspNetGisUsers.Where(x => x.AppId == AppId).FirstOrDefault());
+            if (GisLoginDetails != null)
+            {
+                return FillGisLoginDetailsVMViewModel(GisLoginDetails);
+            }
+            else
+            {
+                return null;
+            }
+
         }
         public string GetDatabaseFromAppID(int AppId)
         {
@@ -1078,6 +1091,15 @@ public int GetUserAppId(string UserId)
             model.LiquidQRCode = data.LiquidQRCode;
             model.StreetQRCode = data.StreetQRCode;
             model.VehicalQRCode = data.VehicalQRCode;
+            return model;
+
+        }
+        private AppDetailsVM FillGisLoginDetailsVMViewModel(AspNetGisUser data)
+        {
+
+            AppDetailsVM model = new AppDetailsVM();
+            model.GisUsername = data.UserName;
+            model.GisPassword = data.Password;
             return model;
 
         }

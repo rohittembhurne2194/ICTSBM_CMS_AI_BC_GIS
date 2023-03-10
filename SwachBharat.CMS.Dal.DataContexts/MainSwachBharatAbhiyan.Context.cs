@@ -52,6 +52,7 @@ namespace SwachBharat.CMS.Dal.DataContexts
         public virtual DbSet<AD_USER_MST_STREET> AD_USER_MST_STREET { get; set; }
         public virtual DbSet<CheckAppD> CheckAppDs { get; set; }
         public virtual DbSet<Sauchalay_feedback> Sauchalay_feedback { get; set; }
+        public virtual DbSet<AspNetGisUser> AspNetGisUsers { get; set; }
     
         public virtual int SP_Admin_table()
         {

@@ -29,6 +29,8 @@ namespace SwachhBharatAbhiyan.CMS.Models.SessionHelper
 
         public string YoccFeddbackLink { get; set; }
         public string YoccDndLink { get; set; }
+        public string GisUsername { get; set; }
+        public string GisPassword { get; set; }
 
         //private constructor
         public SessionHandler()

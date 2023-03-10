@@ -1511,6 +1511,8 @@
     <Content Include="Areas\Street\Content\theme-assets\vendor\popper.js\umd\popper-utils.min.js" />
     <Content Include="Areas\Street\Content\theme-assets\vendor\popper.js\umd\popper.js" />
     <Content Include="Areas\Street\Content\theme-assets\vendor\popper.js\umd\popper.min.js" />
+    <Content Include="bin\SwachhBharatAbhiyan.CMS.dll" />
+    <Content Include="bin\SwachhBharatAbhiyan.CMS.pdb" />
     <Content Include="Complaint\Images\Nagpur\ComplientDetail\111620183249_00f0.jpg" />
     <Content Include="Complaint\Images\Nagpur\ComplientDetail\111620183627_5b24.jpg" />
     <Content Include="Content\Account\AppyLogo.png" />
