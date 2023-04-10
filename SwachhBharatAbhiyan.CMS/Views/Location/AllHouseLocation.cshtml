@@ -223,10 +223,10 @@
             </div>
         </div>
         <br />
-        <div class="row form" style="text-align:center;display:inline-flex">
-            <label class="check-container">
+        <!--<div class="row form" style="text-align:center;display:inline-flex">
+            <label class="check-container">-->
                 @*All House*@
-                All
+                <!--All
                 <input type="radio" checked="checked" value="0" name="radio">
                 <span class="checkmark"></span>
             </label>
@@ -246,25 +246,25 @@
                 <input type="radio" value="3" name="radio">
                 <span class="checkmark"></span>
             </label>
-        </div>
-        <div class="row">
+        </div>-->
+        <!--<div class="row">
             <div class="col-sm-2">
                 <div class="controls">
                     <input type="hidden" value="@ViewBag.lat" id="deflat" />
-                    <input type="hidden" value="@ViewBag.lang" id="deflang" />
+                    <input type="hidden" value="@ViewBag.lang" id="deflang" />-->
                     @*<label>तारीख निवडा / Select Date</label>*@
-                    <label>Select Date</label>
+                    <!--<label>Select Date</label>
                     <input id="txt_fdate" class="datepicker form-control form-control-sm" type="text" />
                 </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2">-->
                 @*<label>कर्मचारी निवडा / Select Employee</label>*@
-                <label>Select Employee</label>
+                <!--<label>Select Employee</label>
                 <select id="selectnumber" class="form-control minimal-form  RequiredInput validate[required] RequiredInput"></select>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2">-->
                 @*<label>कर्मचारी निवडा / Select Employee</label>*@
-                <label>Select Segregation </label>
+                <!--<label>Select Segregation </label>
                 <select id="seg_type" class="form-control minimal-form  RequiredInput validate[required] RequiredInput">
                     <option value="-1"> All Records</option>
                     <option value="1"> Segregated Garbage</option>
@@ -274,28 +274,28 @@
                 </select>
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-3">-->
                 @*<label>कर्मचारी निवडा / Select Employee</label>*@
-                <label>Select Ward / Prabhag</label>
+                <!--<label>Select Ward / Prabhag</label>
                 <select id="selectWard" class="form-control minimal-form  RequiredInput validate[required] RequiredInput"></select>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2">-->
                 @*<label>कर्मचारी निवडा / Select Employee</label>*@
-                <label>Select Area</label>
+                <!--<label>Select Area</label>
                 <select id="selectArea" class="form-control minimal-form  RequiredInput validate[required] RequiredInput"></select>
             </div>
             <div class="col-sm-1">
                 <label>&nbsp;</label>
-                <div class="controls">
+                <div class="controls">-->
                     @*<input data-background-color="filter-button-box-color" style="margin-top:25px;" class="btn btn-sm btn-success filter-button-style" type="button" value="Search" id="filter" onclick="Search()" />
                         <button id="drop" style="margin-top:25px" class="btn btn-sm btn-success filter-button-style" onclick="userroute()">User Wise Route</button>*@
-                    <a id="filter" onclick="Search()" style="margin-top:5px" class="btn btn-sm btn-success filter-button-style">Search</a>
+                    <!--<a id="filter" onclick="Search()" style="margin-top:5px" class="btn btn-sm btn-success filter-button-style">Search</a>-->
                     @*<a id="drop" style="margin-top:25px" class="btn btn-sm btn-success filter-button-style" onclick="userroute()">Route</a>*@
                     @*<a id="drop" style="margin-top:25px" class="btn btn-sm btn-success filter-button-style" href="~/Location/ShowGrid">Back</a>*@
 
 
 
-                </div>
+                <!--</div>
             </div>
 
 
@@ -325,20 +325,53 @@
                 </div>
             </div>
 
-        </div>
+        </div>-->
 
     </div><br />
-    <div class="container">
-        <div class="row" style="position:relative; height:650px;">
-            <p id="wait" style="display:none;position:absolute;top:35%;left:50%;">
-                <img class="rotate_img" src="~/Content/images/img/marker24.png">
-            </p>
-            <div class="col-10 bg-white has-shadow" id="googleMap" style="width:auto; height:600px"></div>
-            <div class="col-sm-2"></div>
-        </div>
-    </div><br />
- 
-    <div class="modal fade" id="#myModal">
+
+    <input type="hidden" value="@ViewBag.myURL" id="url" />
+    <input type="hidden" value="@ViewBag.Username" id="user" />
+    <input type="hidden" value="@ViewBag.Password" id="pass" />
+    <input type="hidden" value="" id="demo" />
+
+    <iframe id="iframe" width="100%" height="600px" src=""></iframe>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            debugger
+            var url = document.getElementById("url").value;
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+
+
+            var encoded = encodeURIComponent(pass);
+
+
+            var finalurl = url + "username=" + user + "&password=" + encoded;
+
+            document.getElementById("iframe").src = finalurl;
+            document.getElementById("demo").value = finalurl;
+
+        });
+
+
+
+    </script>
+
+    @*<div class="container">
+            <div class="row" style="position:relative; height:650px;">
+                <p id="wait" style="display:none;position:absolute;top:35%;left:50%;">
+                    <img class="rotate_img" src="~/Content/images/img/marker24.png">
+                </p>
+                <div class="col-10 bg-white has-shadow" id="googleMap" style="width:auto; height:600px"></div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div><br />*@
+
+    <!--<div class="modal fade" id="#myModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -352,11 +385,11 @@
                 <div class="modal-body">
                     <p>No records found as per your filter</p>
                 </div>
-            </div>
+            </div>-->
             <!-- /.modal-content -->
-        </div>
+        <!--</div>-->
         <!-- /.modal-dialog -->
-    </div>
+    <!--</div>-->
     <script>
         $(document).ready(function () {
 
@@ -464,7 +497,7 @@
                     $("#googleMap").css("display", "block");
                     if (data.length == 0)
                         $('#\\#myModal').modal('show');
-                    
+
                     {
                         var map = new google.maps.Map(document.getElementById('googleMap'), {
                             zoom: 12,
@@ -484,7 +517,7 @@
                     var marker, i;
                     // alert(data.length);
                     // Get Addres
-                    
+
                     var gar_type;
                     for (i = 0; i < data.length; i++) {
                         if (data[i].houseOwnerName == null) {
@@ -610,7 +643,7 @@
                             })(marker, i));
                         }
                         else {
-                             google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
                                 return function () {
                                     var poptext = '<div class=infowindow style="max-width:190px"> <h4 style="text-transform: capitalize;">' + data[i].houseOwnerName + '</h4><p><b>House Id: </b>' + data[i].ReferanceId + '</p>'
                                     if (data[i].houseOwnerMobile != '') {
@@ -635,7 +668,7 @@
 
             });
 
-          
+
         }
 
 

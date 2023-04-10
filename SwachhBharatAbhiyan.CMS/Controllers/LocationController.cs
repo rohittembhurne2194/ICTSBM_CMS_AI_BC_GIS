@@ -215,6 +215,12 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 ViewBag.lang = SessionHandler.Current.Logitude;
                 ViewBag.AppName = SessionHandler.Current.AppName;
 
+                ViewBag.Username = SessionHandler.Current.GisUsername;
+                ViewBag.Password = SessionHandler.Current.GisPassword;
+
+
+                ViewBag.myURL = "http://114.143.244.130:8080?";
+
                 var details = childRepository.GetHouseOnMapDetails();
                 return View(details);
             }
