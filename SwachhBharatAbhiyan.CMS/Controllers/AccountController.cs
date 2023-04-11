@@ -943,8 +943,12 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 SessionHandler.Current.GramPanchyatAppID = ApplicationDetails.GramPanchyatAppID;
                 SessionHandler.Current.YoccFeddbackLink = ApplicationDetails.YoccFeddbackLink;
                 SessionHandler.Current.YoccDndLink = ApplicationDetails.YoccDndLink;
-                SessionHandler.Current.GisUsername = GisLoginDetails.GisUsername;
-                SessionHandler.Current.GisPassword = GisLoginDetails.GisPassword;
+                    if(GisLoginDetails != null)
+                    {
+                        SessionHandler.Current.GisUsername = GisLoginDetails.GisUsername;
+                        SessionHandler.Current.GisPassword = GisLoginDetails.GisPassword;
+                    }
+               
                 }
                 else
                 {

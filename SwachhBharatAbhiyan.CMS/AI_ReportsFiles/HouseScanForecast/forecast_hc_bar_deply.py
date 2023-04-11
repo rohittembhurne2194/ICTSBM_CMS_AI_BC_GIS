@@ -34,7 +34,7 @@ if hostname == "localhost":
 else:
 
     # Parent Directory path
-    parent_dir = "D:/AdvancePublish/ICTSBMCMS_AI/Images/AI"
+    parent_dir = "D:/Publish/ICTSBMCMS_AI_BC_GIS/Images/AI"
 
 # Path
 path = os.path.join(parent_dir, directory)
