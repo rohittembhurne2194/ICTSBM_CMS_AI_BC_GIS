@@ -23,10 +23,10 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
 
             ViewBag.Username = SessionHandler.Current.GisUsername;
             ViewBag.Password = SessionHandler.Current.GisPassword;
+          
+            //ViewBag.myURL = "http://103.26.97.75:8080?appid=" + appid + "&token=" + token; // set your dynamic URL here
 
-            //ViewBag.myURL = "http://114.143.244.130:8080?appid=" + appid + "&token=" + token; // set your dynamic URL here
-
-            ViewBag.myURL = "http://114.143.244.130:8080?";
+            ViewBag.myURL = "http://103.26.97.75:8080?";
             return View();
         }
     }

@@ -283,6 +283,11 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                             AddSession(UserId, UserRole, UserEmail, UserName, model.Type);
 
                         }
+                        ViewBag.Username = SessionHandler.Current.GisUsername;
+                        ViewBag.Password = SessionHandler.Current.GisPassword;
+                        TempData["gisurl"] = "http://103.26.97.75:8080?";
+                        TempData["gisusername"] = SessionHandler.Current.GisUsername;
+                        TempData["gispassword"] = SessionHandler.Current.GisPassword;
                         return RedirectToLocal(returnUrl);
                     case SignInStatus.LockedOut:
                         return View("Lockout");
@@ -291,6 +296,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                     case SignInStatus.Failure:
                     default:
                         ModelState.AddModelError("", "Invalid login attempt.");
+                       
                         return View(model);
 
 
@@ -947,6 +953,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                     {
                         SessionHandler.Current.GisUsername = GisLoginDetails.GisUsername;
                         SessionHandler.Current.GisPassword = GisLoginDetails.GisPassword;
+
+                        ViewBag.Username = SessionHandler.Current.GisUsername;
+                        ViewBag.Password = SessionHandler.Current.GisPassword;
                     }
                
                 }

@@ -382,7 +382,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AI_ReportsFiles\DumpYardForeCast\DumpYardDayWise.py" />
     <Content Include="AI_ReportsFiles\DumpYardForeCast\DumpYardForeCast.py" />
+    <Content Include="AI_ReportsFiles\DumpYardForeCast\DumpYardWeekAndMonthwiseReport.py" />
     <Content Include="AI_ReportsFiles\DumpYardForeCast\forecast_deply_1.py" />
     <Content Include="AI_ReportsFiles\DumpYardForeCast\forecast_gg_bar_deply.py" />
     <Content Include="AI_ReportsFiles\EmpWise_Collection.py" />
@@ -3268,6 +3270,7 @@
     <Content Include="Views\GarbageCollection\MenuDumpYardIndex.cshtml" />
     <Content Include="Views\AIReports\HouseForecastBarReport.cshtml" />
     <Content Include="Views\AIReports\DumpYardDayWiseReport.cshtml" />
+    <Content Include="Views\AIReports\DumpYardWeeklyMonthly.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
